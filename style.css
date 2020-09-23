@@ -1,0 +1,12 @@
+body {
+    background-image: url(../Project-1/gray_jean.png);
+}
+
+.header {   
+    margin-bottom: 90px;
+   font-size: 36pt;
+   font-family: fantasy;
+   text-align: center;
+}   
+
+
