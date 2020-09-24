@@ -5,7 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>80 - 20 - Rule</title>
-
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- reset css -->
     <link rel="stylesheet" href="./assets/css/reset.css">
     <!-- Bulma stylesheet linke -->
@@ -20,7 +25,7 @@
         <div class="container">
             <h1 class="header"> <img src="https://miro.medium.com/max/570/1*sDVFp8mWc5aTfKIQeR_Dzg.jpeg"
                     style="height: 90px; vertical-align: middle;" alt="Health is wealth">
-                80 - 20 - Rule For Healthy Living </h1>
+                80/20 - Rule For Healthy Living </h1>
 
         </div>
 
@@ -61,6 +66,12 @@
                 <article class="tile is-child notification is-success">
                     <div class="content">
                         <p class="title">Tall tile</p>
+                        <form class="form-inline mb-2">
+                            <input type="food" class="form-control mb-2 mt-3 mr-2 border" id="food"
+                                placeholder="Type a food">
+                            <button type="submit" id="foodBtn" class="btn btn-large pull-right"><i
+                                    class="fas fa-utensils" aria-hidden="true"></i></button>
+                        </form>
                         <p class="subtitle">With even more content</p>
                         <div class="content">
                             <!-- Content -->
