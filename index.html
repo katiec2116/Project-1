@@ -22,7 +22,10 @@
 
 <body>
     <section class="section">
-        <div class="container">
+
+        <div class="containerH">
+
+      
             <h1 class="header"> <img src="./assets/images/brandIcon.png" style="height: 90px; vertical-align: middle;"
                     alt="Health is wealth">
                 80/20 - Rule For Healthy Living </h1>
@@ -35,34 +38,61 @@
                     <div class="tile is-parent is-vertical">
                         <article class="tile is-child notification is-primary">
                             <p class="title">Vertical...</p>
-                            <p class="subtitle">Top tile</p>
-                        </article>
-                        <article class="tile is-child notification is-warning">
-                            <p class="title">...tiles</p>
-                            <p class="subtitle">Bottom tile</p>
-                        </article>
-                    </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child notification is-info">
-                            <p class="title">Middle tile</p>
-                            <p class="subtitle">With an image</p>
-                            <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/640x480.png">
-                            </figure>
-                        </article>
+                            <p class="subtitle">
+                            <div class="container">
+                                <div class="field">
+                                    <label class="label">Age</label>
+                                    <div class="control">
+                                        <input class="input" type="number">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Weight</label>
+                                    <div class="control">
+                                        <input class="input" type="number">
+                                    </div>
+                                </div>
+
+
+                                <div class="field">
+                                    <label class="label">Height</label>
+                                    <div class="control">
+                                        <input class="input" type="number">
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Gender</label>
+                                    <div class="control">
+                                        <div class="select">
+                                            <select>
+                                                <option>Gender</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <button class="button">Submit</button>
+
+
+                                <button class="button">Cancel</button>
+                            </div>
                     </div>
                 </div>
-                <div class="tile is-parent">
-                    <article class="tile is-child notification is-danger">
-                        <p class="title">Wide tile</p>
-                        <p class="subtitle">Aligned with the right tile</p>
-                        <div class="content">
-                            <!-- Content -->
-                        </div>
-                    </article>
-                </div>
+                </p>
+                </article>
+                <article class="tile is-child notification is-warning">
+                    <p class="title">...tiles</p>
+                    <p class="subtitle">Bottom tile</p>
+                </article>
             </div>
             <div class="tile is-parent">
+
                 <article class="tile is-child notification is-success">
                     <div class="content">
                         <p class="title">Calorie Calculator!!</p>
@@ -98,12 +128,48 @@
                                 </div>
                             </form>
                     </div>
+
                 </article>
             </div>
+        </div>
+        <div class="tile is-parent">
+            <article class="tile is-child notification is-danger">
+                <p class="title">Wide tile</p>
+                <p class="subtitle">Aligned with the right tile</p>
+                <div class="content">
+                    <!-- Content -->
+                </div>
+            </article>
+        </div>
+        </div>
+        <div class="tile is-parent">
+            <article class="tile is-child notification is-success">
+                <div class="content">
+                    <p class="title">Tall tile</p>
+                    <form class="form-inline mb-2">
+                        <input type="food" class="form-control mb-2 mt-3 mr-2 border" id="food"
+                            placeholder="Type a food">
+                        <button type="submit" id="foodBtn" class="btn btn-large pull-right"><i class="fas fa-utensils"
+                                aria-hidden="true"></i></button>
+                    </form>
+                    <p class="subtitle">With even more content</p>
+                    <div class="content2">
+                        <!-- Content -->
+                    </div>
+                </div>
+            </article>
+        </div>
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+<footer>
+      
+    <h4>Made by GitFit.</h4>
+    <p>
+        &copy; 2020 GitFit Development Group, Inc.
+    </p>
+  </footer>
 
 </html>
