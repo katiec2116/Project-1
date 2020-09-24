@@ -2,6 +2,7 @@
 
 let searchedFood;
 
+
 // on click function for submitting food (Breakfast)
 $("#foodBtnBreakfast").on("click", function (event) {
     event.preventDefault();
@@ -87,4 +88,65 @@ $("#foodBtnDinner").on("click", function (event) {
                 $(".contentDinner").append($("<p>").text(response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories))
             }
         });
+});
+//. Daily Calories 
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth=180&age=25&gender=male&weigth=70",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+		"x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+//.Boy mass Index
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://fitness-calculator.p.rapidapi.com/bmi?age=25&height=180&weight=65",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+		"x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+
+//. Ideal weight 
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://fitness-calculator.p.rapidapi.com/idealweight?weight=70&gender=male&height=178",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+		"x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+//. Body Fat.
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://fitness-calculator.p.rapidapi.com/bodyfat?waist=96&gender=male&neck=50&heigth=178&hip=92&age=25&weigth=70",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+		"x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
 });
