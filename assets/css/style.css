@@ -9,4 +9,30 @@ body {
    text-align: center;
 }   
 
+.field{
+
+
+    color: black;
+    
+    }
+    
+    .container {
+        border: 9px solid #E3A340;
+        border-radius: 18px;
+        padding:10px ;
+    }
+    
+    .select {
+        border-radius: 1cm;
+    }
+
+    footer {
+
+        padding: 15px;
+        clear: both;
+        font-family: fantasy;;
+        text-align: center;
+        color:rgb(0, 0, 0);
+        background-image: url(../images/gray_jean.png); ;
+    }
 
