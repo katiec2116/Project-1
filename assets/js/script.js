@@ -1,18 +1,20 @@
 // grabbing button by ID and creating an event
 
 let searchedFood;
-let breakfast = ['apple', 'banana', 'pie'];
+let breakfast = [];
 let lunch = [];
 let dinner = [];
 
+// console.log(Array.isArray(breakfast));
 
 
 
-getFoods();
+
+// getFoods();
 // on click function for submitting food (Breakfast)
 $("#foodBtnBreakfast").on("click", function (event) {
     event.preventDefault();
-    console.log(breakfast);
+    // console.log(breakfast);
     // var to hold sumbitted food
     searchedFood = $("#food").val();
     var queryURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
@@ -34,7 +36,12 @@ $("#foodBtnBreakfast").on("click", function (event) {
         .then(function (response) {
             // loops through all foods found and add calories count to the page
             for (var i = 0; i < response.foods.length; i++) {
-                $(".contentBreakfast").append($("<p>").text(response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories))
+                let b = response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories
+                b = b.charAt(0).toUpperCase() + b.substr(1);
+                $(".content2").append($("<p>").text(b))
+                breakfast.push(b)
+                console.log(breakfast)
+                saveFoods();
             }
         });
 });
@@ -64,7 +71,12 @@ $("#foodBtnLunch").on("click", function (event) {
         .then(function (response) {
             // loops through all foods found and add calories count to the page
             for (var i = 0; i < response.foods.length; i++) {
-                $(".contentLunch").append($("<p>").text(response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories))
+                let l = response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories
+                l = l.charAt(0).toUpperCase() + l.substr(1);
+                $(".contentLunch").append($("<p>").text(l))
+                lunch.push(l)
+                console.log(lunch)
+                saveFoods();
             }
         });
 });
@@ -94,7 +106,12 @@ $("#foodBtnDinner").on("click", function (event) {
         .then(function (response) {
             // loops through all foods found and add calories count to the page
             for (var i = 0; i < response.foods.length; i++) {
-                $(".contentDinner").append($("<p>").text(response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories))
+                let d = response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories
+                d = d.charAt(0).toUpperCase() + d.substr(1);
+                $(".contentDinner").append($("<p>").text(d))
+                dinner.push(d)
+                console.log(dinner)
+                saveFoods();
             }
         });
 });
