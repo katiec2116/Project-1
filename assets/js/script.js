@@ -10,11 +10,10 @@ let dinner = [];
 
 
 
-// getFoods();
+getFoods();
 // on click function for submitting food (Breakfast)
 $("#foodBtnBreakfast").on("click", function (event) {
     event.preventDefault();
-    // console.log(breakfast);
     // var to hold sumbitted food
     searchedFood = $("#food").val();
     var queryURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
@@ -124,28 +123,26 @@ function saveFoods() {
 }
 
 function getFoods() {
-    localStorage.getItem("breakfast");
+    if (localStorage.getItem("breakfast")!= null){
     breakfast = JSON.parse(localStorage.getItem("breakfast"));
-    if (breakfast != null){
     breakfast.forEach(item => {
-            let food = $("<button>").text(item).attr("data-value", item);
+            let food = $("<p>").text(item);
             // add city to search history lost and add data value attribute
-            $(".content2").prepend(food);
+            $(".content2").append(food);
     })}
-    localStorage.getItem("breakfast");
+
+    if (localStorage.getItem("lunch") != null){
     lunch = JSON.parse(localStorage.getItem("lunch"));
-    if (lunch != null){
     lunch.forEach(item => {
-            let food = $("<button>").text(item).attr("data-value", item);
+            let food = $("<p>").text(item);
             // add city to search history lost and add data value attribute
-            $(".content2").prepend(food);
+            $(".contentLunch").append(food);
     })}
-    localStorage.getItem("breakfast");
+    if (localStorage.getItem("dinner") != null){
     dinner = JSON.parse(localStorage.getItem("dinner"));
-    if (dinner != null){
     dinner.forEach(item => {
-            let food = $("<button>").text(item).attr("data-value", item);
+            let food = $("<p>").text(item);
             // add city to search history lost and add data value attribute
-            $(".content2").prepend(food);
+            $(".contentDinner").append(food);
         })}
 }
