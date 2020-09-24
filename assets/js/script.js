@@ -6,17 +6,16 @@ let lunch = [];
 let dinner = [];
 
 
-// get 
+// get foods from local storage
 getFoods();
 
-
-
-
+// clear button to empty local storage and display
 $("#clear").on("click", function (event) {
     event.preventDefault();
     $(".content2").empty();
     $(".contentLunch").empty();
     $(".contentDinner").empty();
+    localStorage.clear();
 });
 // on click function for submitting food (Breakfast)
 $("#foodBtnBreakfast").on("click", function (event) {
@@ -40,13 +39,18 @@ $("#foodBtnBreakfast").on("click", function (event) {
 
         // do stuff with the data
         .then(function (response) {
+            console.log(response)
             // loops through all foods found and add calories count to the page
             for (var i = 0; i < response.foods.length; i++) {
-                let b = response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories
+                // grabs food name, and calories
+                let b = response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories;
+                // capitalizes food
                 b = b.charAt(0).toUpperCase() + b.substr(1);
+                // adds to page
                 $(".content2").append($("<p>").text(b))
+                // adds to array
                 breakfast.push(b)
-                console.log(breakfast)
+                // saves food to local storage
                 saveFoods();
             }
         });
@@ -57,7 +61,6 @@ $("#foodBtnLunch").on("click", function (event) {
     event.preventDefault();
     // var to hold sumbitted food
     searchedFood = $("#foodLunch").val();
-    // lunch.push(searchedFood);
     var queryURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
     // call to api to generate data
     $.ajax({
@@ -77,11 +80,15 @@ $("#foodBtnLunch").on("click", function (event) {
         .then(function (response) {
             // loops through all foods found and add calories count to the page
             for (var i = 0; i < response.foods.length; i++) {
+                // grabs food name, and calories
                 let l = response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories
+                // capitalizes food
                 l = l.charAt(0).toUpperCase() + l.substr(1);
+                // adds to page
                 $(".contentLunch").append($("<p>").text(l))
+                // adds to array
                 lunch.push(l)
-                console.log(lunch)
+                // saves food to local storage
                 saveFoods();
             }
         });
@@ -112,11 +119,15 @@ $("#foodBtnDinner").on("click", function (event) {
         .then(function (response) {
             // loops through all foods found and add calories count to the page
             for (var i = 0; i < response.foods.length; i++) {
-                let d = response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories
+                // grabs food name and calories
+                let d = response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories;
+                // capitalizes food
                 d = d.charAt(0).toUpperCase() + d.substr(1);
-                $(".contentDinner").append($("<p>").text(d))
-                dinner.push(d)
-                console.log(dinner)
+                // add to page
+                $(".contentDinner").append($("<p>").text(d));
+                // adds to array
+                dinner.push(d);
+                // saves food to local storage
                 saveFoods();
             }
         });
@@ -130,23 +141,28 @@ function saveFoods() {
 }
 
 function getFoods() {
+    // checks if local storage is empty
     if (localStorage.getItem("breakfast")!= null){
     breakfast = JSON.parse(localStorage.getItem("breakfast"));
+    // generate p tag to display each food item
     breakfast.forEach(item => {
             let food = $("<p>").text(item);
             // add city to search history lost and add data value attribute
             $(".content2").append(food);
     })}
-
+    // checks if local storage is empty
     if (localStorage.getItem("lunch") != null){
     lunch = JSON.parse(localStorage.getItem("lunch"));
+    // generate p tag to display each food item
     lunch.forEach(item => {
             let food = $("<p>").text(item);
             // add city to search history lost and add data value attribute
             $(".contentLunch").append(food);
     })}
+    // checks if local storage is empty
     if (localStorage.getItem("dinner") != null){
     dinner = JSON.parse(localStorage.getItem("dinner"));
+    // generate p tag to display each food item
     dinner.forEach(item => {
             let food = $("<p>").text(item);
             // add city to search history lost and add data value attribute
