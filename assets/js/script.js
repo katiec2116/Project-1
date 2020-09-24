@@ -26,7 +26,7 @@ $("#foodBtn").on("click", function (event) {
         .then(function (response) {
             // loops through all foods found and add calories count to the page
             for (var i = 0; i < response.foods.length; i++) {
-                $("#results").append($("<p>").text(response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories))
+                $(".content2").append($("<p>").text(response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories))
             }
         });
 });
