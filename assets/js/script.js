@@ -5,12 +5,19 @@ let breakfast = [];
 let lunch = [];
 let dinner = [];
 
-// console.log(Array.isArray(breakfast));
 
-
-
-
+// get 
 getFoods();
+
+
+
+
+$("#clear").on("click", function (event) {
+    event.preventDefault();
+    $(".content2").empty();
+    $(".contentLunch").empty();
+    $(".contentDinner").empty();
+});
 // on click function for submitting food (Breakfast)
 $("#foodBtnBreakfast").on("click", function (event) {
     event.preventDefault();

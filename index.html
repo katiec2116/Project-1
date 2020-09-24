@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- UIKit stylesheet link -->
-    <link rel="stylesheet" href="css/uikit.min.css">
 </head>
 
 <body>
@@ -95,7 +94,7 @@
 
                 <article class="tile is-child notification is-success">
                     <div class="content">
-                        <p class="title">Calorie Calculator!!</p>
+                        <p class="title">Calorie Calculator!! <button type="submit" id="clear" class="btn btn-sm float-right mr-2"> Clear saved foods</button></p>
                         <div class="field is-horizontal">
                             <form class="form-inline mb-2">
                                 <input type="food" class="form-control mb-2 mt-3 mr-2 border" id="food"
@@ -128,9 +127,10 @@
                                 </div>
                             </form>
                     </div>
-                    <div class="totalNutrion">
+                    <div class="totalNutrition">
                         <!--Content-->
                     </div>
+                    
                 </article>
             </div>
         </div>
