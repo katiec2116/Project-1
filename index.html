@@ -8,9 +8,6 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- reset css -->
     <link rel="stylesheet" href="./assets/css/reset.css">
     <!-- Bulma stylesheet linke -->
@@ -20,16 +17,12 @@
 </head>
 
 <body>
+    <header class="containerH">
+        <h1 class="header"> <img src="./assets/images/brandIcon.png" style="height: 90px; vertical-align: middle;"
+                alt="Health is wealth">
+            80/20 - Rule For Healthy Living </h1>
+    </header>
     <section class="section">
-
-        <div class="containerH">
-
-      
-            <h1 class="header"> <img src="./assets/images/brandIcon.png" style="height: 90px; vertical-align: middle;"
-                    alt="Health is wealth">
-                80/20 - Rule For Healthy Living </h1>
-
-        </div>
 
         <div class="tile is-ancestor">
             <div class="tile is-vertical is-8">
@@ -94,7 +87,8 @@
 
                 <article class="tile is-child notification is-success">
                     <div class="content">
-                        <p class="title">Calorie Calculator!! <button type="submit" id="clear" class="btn btn-sm float-right mr-2"> Clear saved foods</button></p>
+                        <p class="title">Calorie Calculator!! <button type="submit" id="clear"
+                                class="btn btn-sm float-right mr-2"> Clear saved foods</button></p>
                         <div class="field is-horizontal">
                             <form class="form-inline mb-2">
                                 <input type="food" class="form-control mb-2 mt-3 mr-2 border" id="food"
@@ -126,11 +120,11 @@
                                     <!-- Content -->
                                 </div>
                             </form>
-                    </div>
-                    <div class="totalNutrition">
-                        <!--Content-->
-                    </div>
-                    
+                        </div>
+                        <div class="totalNutrition">
+                            <!--Content-->
+                        </div>
+
                 </article>
             </div>
         </div>
@@ -141,11 +135,11 @@
     <script src="./assets/js/script.js"></script>
 </body>
 <footer>
-      
+
     <h4>Made by GitFit.</h4>
     <p>
         &copy; 2020 GitFit Development Group, Inc.
     </p>
-  </footer>
+</footer>
 
 </html>
