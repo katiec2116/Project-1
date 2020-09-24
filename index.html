@@ -8,9 +8,6 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- reset css -->
     <link rel="stylesheet" href="./assets/css/reset.css">
     <!-- Bulma stylesheet linke -->
@@ -20,132 +17,135 @@
 </head>
 
 <body>
-    <section class="section">
-
-        <div class="containerH">
-
-      
-            <h1 class="header"> <img src="./assets/images/brandIcon.png" style="height: 90px; vertical-align: middle;"
-                    alt="Health is wealth">
-                80/20 - Rule For Healthy Living </h1>
-
-        </div>
+    <header class="containerH">
+        <h1 class="header"> <img src="./assets/images/brandIcon.png" style="height: 90px; vertical-align: middle;"
+                alt="Health is wealth">
+            80/20 - Rule For Healthy Living </h1>
+    </header>
+    <div class="container">
 
         <div class="tile is-ancestor">
-            <div class="tile is-vertical is-8">
+            <div class="tile is-vertical is-4">
                 <div class="tile">
                     <div class="tile is-parent is-vertical">
                         <article class="tile is-child notification is-primary">
                             <p class="title">Fitness Calculator</p>
-                            <p class="subtitle">
-                            <div class="container">
-                                <div class="field">
-                                    <label class="label">Age</label>
-                                    <div class="control">
-                                        <input class="input" type="number">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">Weight</label>
-                                    <div class="control">
-                                        <input class="input" type="number">
-                                    </div>
-                                </div>
-
-
-                                <div class="field">
-                                    <label class="label">Height</label>
-                                    <div class="control">
-                                        <input class="input" type="number">
-                                    </div>
-                                </div>
-
-                                <div class="field">
-                                    <label class="label">Gender</label>
-                                    <div class="control">
-                                        <div class="select">
-                                            <select>
-                                                <option>Gender</option>
-                                                <option>Male</option>
-                                                <option>Female</option>
-                                            </select>
+                            <div class="content">
+                                <div class="containerFitness">
+                                    <div class="field">
+                                        <label class="label">Age</label>
+                                        <div class="control">
+                                            <input class="input" type="number">
                                         </div>
                                     </div>
+                                    <div class="field">
+                                        <label class="label">Weight</label>
+                                        <div class="control">
+                                            <input class="input" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Height</label>
+                                        <div class="control">
+                                            <input class="input" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label">Gender</label>
+                                        <div class="control">
+                                            <div class="select">
+                                                <select>
+                                                    <option>Gender</option>
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="button">Submit</button>
+                                    <button class="button">Cancel</button>
                                 </div>
-
-
-
-
-                                <button class="button">Submit</button>
-
-
-                                <button class="button">Cancel</button>
                             </div>
+                        </article>
+                        <article class="tile is-child notification is-primary">
+                            <p class="title pb-4">Fitness Results</p>
+                            <div class="field is-horizontal is-grouped">
+                                stuff goes here
+                            </div>
+                        </article>
                     </div>
                 </div>
-                </p>
-                </article>
-                <article class="tile is-child notification is-warning">
-                    <p class="title">...tiles</p>
-                    <p class="subtitle">Bottom tile</p>
-                </article>
             </div>
-            <div class="tile is-parent">
-
-                <article class="tile is-child notification is-success">
-                    <div class="content">
-                        <p class="title">Calorie Calculator!! <button type="submit" id="clear" class="btn btn-sm float-right mr-2"> Clear saved foods</button></p>
-                        <div class="field is-horizontal">
-                            <form class="form-inline mb-2">
-                                <input type="food" class="form-control mb-2 mt-3 mr-2 border" id="food"
-                                    placeholder="Breakfast">
-                                <button type="submit" id="foodBtnBreakfast" class="btn btn-large pull-right"><i
-                                        class="fas fa-utensils" aria-hidden="true"></i></button>
-                                <p class="subtitle">Nutritional Information</p>
-                                <div class="content2">
-                                    <!-- Content -->
+            <div class="tile is-vertical is-8">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child notification has-background-grey-lighter foodTile">
+                            <p class="title pb-4">Calorie Calculator</p>
+                            <div class="foodContent field is-horizontal">
+                                <div class="field">
+                                    <label class="label">Breakfast</label>
+                                    <div class="control">
+                                        <input class="input" type="text" id="food">
+                                        <button type="submit" id="foodBtnBreakfast" class="button is-small mr-3"><i
+                                                class="fas fa-utensils fa-lg" aria-hidden="true"></i></button>
+                                    </div>
                                 </div>
-                            </form>
-                            <form class="form-inline mb-2">
-                                <input type="food" class="form-control mb-2 mt-3 mr-2 border" id="foodLunch"
-                                    placeholder="Lunch">
-                                <button type="submit" id="foodBtnLunch" class="btn btn-large pull-right"><i
-                                        class="fas fa-utensils" aria-hidden="true"></i></button>
-                                <p class="subtitle">Nutritional Information</p>
-                                <div class="contentLunch">
-                                    <!-- Content -->
+                                <div class="field">
+                                    <label class="label">Lunch</label>
+                                    <div class="control">
+                                        <input class="input" type="text" id="foodLunch">
+                                        <button type="submit" id="foodBtnLunch" class="button is-small mr-3"><i
+                                                class="fas fa-utensils fa-lg" aria-hidden="true"></i></button>
+                                    </div>
                                 </div>
-                            </form>
-                            <form class="form-inline mb-2">
-                                <input type="food" class="form-control mb-2 mt-3 mr-2 border" id="foodDinner"
-                                    placeholder="Dinner">
-                                <button type="submit" id="foodBtnDinner" class="btn btn-large pull-right"><i
-                                        class="fas fa-utensils" aria-hidden="true"></i></button>
-                                <p class="subtitle">Nutritional Information</p>
-                                <div class="contentDinner">
-                                    <!-- Content -->
+                                <div class="field">
+                                    <label class="label">Dinner</label>
+                                    <div class="control">
+                                        <input class="input" type="text" id="foodDinner">
+                                        <button type="submit" id="foodBtnDinner" class="button is-small mr-3"><i
+                                                class="fas fa-utensils fa-lg" aria-hidden="true"></i></button>
+                                    </div>
                                 </div>
-                            </form>
+                            </div>
+                        </article>
+                        <article class="tile is-child notification has-background-grey-lighter foodTile">
+                            <p class="title pb-4">Nutritional Information<button type="submit" id="clear"
+                                    class="button is-small is-pulled-right mr-2"> Clear saved foods</button></p>
+                            <div class="foodContent field is-horizontal">
+                                <div class="control">
+                                    <p class="subtitle">Breakfast</p>
+                                    <div class="content2">
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <p class="subtitle">Lunch</p>
+                                    <div class="contentLunch">
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <p class="subtitle">Dinner</p>
+                                    <div class="contentDinner">
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                    <div class="totalNutrition">
-                        <!--Content-->
-                    </div>
-                    
-                </article>
+                </div>
             </div>
         </div>
-        </div>
-        </div>
-    </section>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 <footer>
-      
+
     <h4>Made by GitFit.</h4>
     <p>
         &copy; 2020 GitFit Development Group, Inc.
     </p>
-  </footer>
+</footer>
 
 </html>
