@@ -93,7 +93,7 @@ $("#foodBtnDinner").on("click", function (event) {
 var settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth=180&age=25&gender=male&weigth=70",
+	"url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth=100&age=20&gender=male&weigth=170",
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
@@ -150,3 +150,4 @@ var settings = {
 $.ajax(settings).done(function (response) {
 	console.log(response);
 });
+
