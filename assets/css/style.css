@@ -1,6 +1,7 @@
 body {
-    background-image: url(../images/gray_jean.png);
-    height:100%;
+    background-color: #FA85C4ff;
+    height:100%;  
+    font-family: 'Poppins', sans-serif; 
 }
 
 .header {   
@@ -32,10 +33,10 @@ body {
 footer {
     padding: 15px;
     clear: both;
-    font-family: fantasy;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     color:rgb(0, 0, 0);
-    background-image: url(../images/gray_jean.png); 
+    background-color: #FA85C4ff; 
 }
 
 i{

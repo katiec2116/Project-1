@@ -13,31 +13,35 @@
     <!-- Bulma stylesheet linke -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-<!-- GoogleFonts stylesheet -->
+    <!-- GoogleFonts stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Poppins:wght@500;800&display=swap"
+        rel="stylesheet">
 
-    
+
 </head>
 
 <body>
     <section class="hero mb-6">
         <div class="hero-body py-0" id="hero-text">
             <img src="./assets/images/iconNew.png" alt="">
-            <h1 class = "name">80/20 Rule</h1>
-            <div class = "headerText mt-3">
-                blurb about why eating healthy is important... this application provides tools needed to stay healthy. use the calculators below something something
+            <h1 class="name">80/20 Rule</h1>
+            <div class="headerText mt-3">
+                Good nutrition is an important part of leading a healthy lifestyle. Combined with physical activity,
+                your diet can help you to reach and maintain a healthy weight, reduce your risk of chronic diseases
+                (like heart disease and cancer), and promote your overall health.
             </div>
             <div class="arrow bounce">
                 <a class="fa fa-arrow-down fa-2x" href="#"></a>
-              </div>
+            </div>
         </div>
-      </section>
+    </section>
     <div class="container">
 
         <div class="tile is-ancestor">
             <div class="tile is-vertical is-4">
                 <div class="tile">
                     <div class="tile is-parent is-vertical">
-                        <article class="tile is-child notification is-primary">
+                        <article class="tile is-child notification is-notification has-background-grey-lighter">
                             <p class="title">Fitness Calculator</p>
                             <div class="content">
                                 <div class="containerFit">
@@ -76,7 +80,7 @@
                                 </div>
                             </div>
                         </article>
-                        <article class="tile is-child notification is-primary">
+                        <article class="tile is-child notification is-notification has-background-grey-lighter">
                             <p class="title pb-4">Fitness Results</p>
                             <div class="field is-horizontal is-grouped">
                                 stuff goes here
@@ -118,8 +122,9 @@
                             </div>
                         </article>
                         <article class="tile is-child notification has-background-grey-lighter foodTile">
-                            <p class="title pb-4">Nutritional Information<button type="reset" value="Reset input" id="clear"
-                                    class="button is-small is-link is-pulled-right mr-2"> <i class="fas fa-undo"></i>Reset Calculator</button></p>
+                            <p class="title pb-4">Nutritional Information<button type="reset" value="Reset input"
+                                    id="clear" class="button is-small is-info is-pulled-right mr-2"> <i
+                                        class="fas fa-undo"></i>Reset Calculator</button></p>
                             <div class="foodContent field is-horizontal">
                                 <div class="control">
                                     <p class="subtitle">Breakfast</p>
@@ -141,31 +146,33 @@
                                 </div>
                                 <div class="control">
                                     <p class="subtitle"><button type="submit" id="totalBtn"
-                                        class="button is-small is-pulled-right mr-2"> Get Total Calories for the day</button></p>
-                                        <div class="totalCalDisplay">
+                                            class="button is-small is-pulled-right mr-2"> Get Total Calories for the
+                                            day</button></p>
+                                    <div class="totalCalDisplay">
                                         <!-- Content -->
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </article>
                     </div>
+                    </article>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
     <footer class="footer">
         <div class="content has-text-centered">
-          <p class = "mb-0">
-            Made by <strong>GitFit.</strong> 
-            <p class = "mb-0">
+            <p class="mb-0">
+                Made by <strong>GitFit.</strong>
+            <p class="mb-0">
                 &copy; 2020 GitFit Development Group, Inc.
             </p>
-          </p>
+            </p>
         </div>
-      </footer>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="./assets/js/script.js"></script>
-  </body>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
