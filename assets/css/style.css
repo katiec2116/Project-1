@@ -5,9 +5,10 @@ body {
 
 .header {   
     margin-bottom: 90px;
-   font-size: 36pt;
-   font-family: fantasy;
+   font-size: 40pt;
+   font-family: 'Poppins', sans-serif;;
    text-align: center;
+   color: mediumblue;
 }   
 
 .field{
@@ -40,6 +41,7 @@ footer {
 i{
     margin-right: 10px;
 }
+
 
 .hero{
     background-image:url(../images/background.jpg);
@@ -104,3 +106,4 @@ a { color: white; text-decoration: none; }
       transform: translateY(-15px);
     }
   }
+
