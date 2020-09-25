@@ -15,6 +15,7 @@ $("#clear").on("click", function (event) {
     $(".content2").empty();
     $(".contentLunch").empty();
     $(".contentDinner").empty();
+    $(".totalCalDisplay").empty();
     localStorage.clear();
 });
 // on click function for submitting food (Breakfast)
