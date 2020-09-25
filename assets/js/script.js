@@ -43,13 +43,16 @@ $("#foodBtnBreakfast").on("click", function (event) {
             // loops through all foods found and add calories count to the page
             for (var i = 0; i < response.foods.length; i++) {
                 // grabs food name, and calories
-                let b = response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories;
+                let d = {
+                    name: response.foods[i].food_name,
+                    calories: response.foods[i].nf_calories
+                }
                 // capitalizes food
-                b = b.charAt(0).toUpperCase() + b.substr(1);
-                // adds to page
-                $(".content2").append($("<p>").text(b))
+                d.name = d.name.charAt(0).toUpperCase() + d.name.substr(1);
+                // add to page
+                $(".content2").append($("<p>").text(d.name+ " Calories: "+ d.calories));
                 // adds to array
-                breakfast.push(b)
+                breakfast.push(d)
                 // saves food to local storage
                 saveFoods();
             }
@@ -81,13 +84,16 @@ $("#foodBtnLunch").on("click", function (event) {
             // loops through all foods found and add calories count to the page
             for (var i = 0; i < response.foods.length; i++) {
                 // grabs food name, and calories
-                let l = response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories
+                let d = {
+                    name: response.foods[i].food_name,
+                    calories: response.foods[i].nf_calories
+                }
                 // capitalizes food
-                l = l.charAt(0).toUpperCase() + l.substr(1);
-                // adds to page
-                $(".contentLunch").append($("<p>").text(l))
+                d.name = d.name.charAt(0).toUpperCase() + d.name.substr(1);
+                // add to page
+                $(".contentLunch").append($("<p>").text(d.name+ " Calories: "+ d.calories));
                 // adds to array
-                lunch.push(l)
+                lunch.push(d)
                 // saves food to local storage
                 saveFoods();
             }
@@ -120,11 +126,14 @@ $("#foodBtnDinner").on("click", function (event) {
             // loops through all foods found and add calories count to the page
             for (var i = 0; i < response.foods.length; i++) {
                 // grabs food name and calories
-                let d = response.foods[i].food_name + " Calories: " + response.foods[i].nf_calories;
+                let d = {
+                    name: response.foods[i].food_name,
+                    calories: response.foods[i].nf_calories
+                }
                 // capitalizes food
-                d = d.charAt(0).toUpperCase() + d.substr(1);
+                d.name = d.name.charAt(0).toUpperCase() + d.name.substr(1);
                 // add to page
-                $(".contentDinner").append($("<p>").text(d));
+                $(".contentDinner").append($("<p>").text(d.name+ " Calories: "+ d.calories));
                 // adds to array
                 dinner.push(d);
                 // saves food to local storage
@@ -132,6 +141,26 @@ $("#foodBtnDinner").on("click", function (event) {
             }
         });
 });
+
+// Adds Calories together 
+function getTotalCal(){
+    var total = 0;
+    for (let index = 0; index < breakfast.length; index++) {
+        total += parseFloat(breakfast[index].calories)
+    }
+    for (let index = 0; index < lunch.length; index++) {
+        total += parseFloat(lunch[index].calories)
+    }
+    for (let index = 0; index < dinner.length; index++) {
+        total += parseFloat(dinner[index].calories)
+    }
+
+    console.log(total);
+
+
+    $(".totalCalories").append($("<p>").numbers(total));
+};
+
 
 // local storage for food data
 function saveFoods() {
@@ -146,7 +175,7 @@ function getFoods() {
     breakfast = JSON.parse(localStorage.getItem("breakfast"));
     // generate p tag to display each food item
     breakfast.forEach(item => {
-            let food = $("<p>").text(item);
+            let food = $("<p>").text(item.name+ " Calories: "+ item.calories);
             // add city to search history lost and add data value attribute
             $(".content2").append(food);
     })}
@@ -155,7 +184,7 @@ function getFoods() {
     lunch = JSON.parse(localStorage.getItem("lunch"));
     // generate p tag to display each food item
     lunch.forEach(item => {
-            let food = $("<p>").text(item);
+            let food = $("<p>").text(item.name+ " Calories: "+ item.calories);
             // add city to search history lost and add data value attribute
             $(".contentLunch").append(food);
     })}
@@ -164,7 +193,7 @@ function getFoods() {
     dinner = JSON.parse(localStorage.getItem("dinner"));
     // generate p tag to display each food item
     dinner.forEach(item => {
-            let food = $("<p>").text(item);
+            let food = $("<p>").text(item.name+ " Calories: "+ item.calories);
             // add city to search history lost and add data value attribute
             $(".contentDinner").append(food);
         })}
