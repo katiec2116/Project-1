@@ -8,6 +8,7 @@ let fitnessCalculator;
 
 // get foods from local storage
 getFoods();
+getTotalCal();
 
 // clear button to empty local storage and display
 $("#clear").on("click", function (event) {
@@ -15,8 +16,9 @@ $("#clear").on("click", function (event) {
     $(".content2").empty();
     $(".contentLunch").empty();
     $(".contentDinner").empty();
-    $(".totalCalDisplay").empty();
+    $(".totalCal").text("Total Calories: 0")
     localStorage.clear();
+    
 });
 // on click function for submitting food (Breakfast)
 $("#foodBtnBreakfast").on("click", function (event) {
@@ -46,7 +48,7 @@ $("#foodBtnBreakfast").on("click", function (event) {
                 // grabs food name, and calories
                 let d = {
                     name: response.foods[i].food_name,
-                    calories: response.foods[i].nf_calories
+                    calories: response.foods[i].nf_calories.toFixed(0)
                 }
                 // capitalizes food
                 d.name = d.name.charAt(0).toUpperCase() + d.name.substr(1);
@@ -56,6 +58,7 @@ $("#foodBtnBreakfast").on("click", function (event) {
                 breakfast.push(d)
                 // saves food to local storage
                 saveFoods();
+                getTotalCal();
             }
         });
 });
@@ -87,7 +90,7 @@ $("#foodBtnLunch").on("click", function (event) {
                 // grabs food name, and calories
                 let d = {
                     name: response.foods[i].food_name,
-                    calories: response.foods[i].nf_calories
+                    calories: response.foods[i].nf_calories.toFixed(0)
                 }
                 // capitalizes food
                 d.name = d.name.charAt(0).toUpperCase() + d.name.substr(1);
@@ -97,6 +100,7 @@ $("#foodBtnLunch").on("click", function (event) {
                 lunch.push(d)
                 // saves food to local storage
                 saveFoods();
+                getTotalCal();
             }
         });
 });
@@ -137,7 +141,7 @@ $("#foodBtnDinner").on("click", function (event) {
                 // grabs food name and calories
                 let d = {
                     name: response.foods[i].food_name,
-                    calories: response.foods[i].nf_calories
+                    calories: response.foods[i].nf_calories.toFixed(0)
                 }
                 // capitalizes food
                 d.name = d.name.charAt(0).toUpperCase() + d.name.substr(1);
@@ -147,14 +151,15 @@ $("#foodBtnDinner").on("click", function (event) {
                 dinner.push(d);
                 // saves food to local storage
                 saveFoods();
+                getTotalCal();
             }
         });
 });
 
 // Adds Calories together 
-$("#totalBtn").on("click",
-
+// $("#totalBtn").on("click",
     function getTotalCal() {
+        $(".totalDiv").empty();
         var total = 0;
         for (let index = 0; index < breakfast.length; index++) {
             total += parseFloat(breakfast[index].calories)
@@ -166,12 +171,10 @@ $("#totalBtn").on("click",
             total += parseFloat(dinner[index].calories)
         }
 
+        var x = $("<p>").text("Total Calories: " + total.toFixed(0)).addClass("totalCal")
 
-        console.log(total);
-
-
-        $(".totalCalDisplay").append($("<p>").text(total));
-    });
+        $(".totalDiv").append(x);
+    };
 
 
 // local storage for food data
