@@ -230,23 +230,21 @@ $(".buttonS").on("click", function (event) {
 
 
 
-
-    function bmi() {
-        var bmi = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&height=" + height + "&weight=" + weight,
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
-                "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
-            }
+    var bmi = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&height=" + height + "&weight=" + weight,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
         }
-        $.ajax(bmi).done(function (response) {
-            var result = response.bmi.toFixed(2);
-            $(".BMI").text(result);
-        });
     }
+    $.ajax(bmi).done(function (response) {
+        var result = response.bmi.toFixed(2);
+        $(".BMI").text(result);
+    });
+
 
     //.....Ideal Weight 
 
@@ -281,25 +279,25 @@ $(".buttonS").on("click", function (event) {
     }
 
     $.ajax(bodyFat).done(function (response) {
-        var result = response.Body-Fat-(BMI method).toFixed(2);
-        $(".bodyFat").text(result);
+        var result = response['Body Fat (BMI method)'].toFixed(2);
+    $(".bodyFat").text(result);
     });
 
-    //........ daily calories
+        //........ daily calories
 
     var dailyCalories = {
         "async": true,
         "crossDomain": true,
-        "url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth=" + height + "&age=" + age + "&gender=" + gender +"&weigth=" + weight,
+        "url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth=" + height + "&age=" + age + "&gender=" + gender + "&weigth=" + weight,
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
             "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
         }
-    }
+    }   
 
     $.ajax(dailyCalories).done(function (response) {
-        var result = response.date.BMR.toFixed(2);
+        var result = response.data.BMR.toFixed(2);
         $(".dailyC").text(result);
     });
 
