@@ -63,23 +63,30 @@ img {
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
+    width:80%;
+}
+strong{
+    color:whitesmoke;
 }
 
 .name{
     font-size: 35px;
     font-weight: bolder;
-    color: whitesmoke
+    color: whitesmoke;
+    text-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0), 0 0 10px #000000, 0 0 15px #000000;
 }
 
 .headerText{
     color: white;
     font-size: 18px;
-    border: 2px whitesmoke solid;
-    width:50%;
+    border: 3px whitesmoke solid;
+    width:45%;
     margin: auto;
     border-radius: 25px;
     padding: 15px;
-    background-color:rgb(255, 255, 255, 0.2)
+    background-color:rgb(255, 255, 255, 0.2);
+    box-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0), 0 0 10px #000000, 0 0 25px #000000;
+    text-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0), 0 0 10px #000000, 0 0 15px #000000;;
      
 }
 
@@ -148,3 +155,8 @@ table.greenTable {
     }
   }
 
+  @media screen and (max-width: 1000px) {
+    .headerText {
+      width: 100%;
+    }
+  }
