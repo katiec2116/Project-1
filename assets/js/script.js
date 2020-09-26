@@ -4,7 +4,7 @@ let searchedFood;
 let breakfast = [];
 let lunch = [];
 let dinner = [];
-
+let fitnessCalculator;
 
 // get foods from local storage
 getFoods();
@@ -212,3 +212,74 @@ $("#totalBtn").on("click",
             })
         }
     }
+
+    //... BMI
+
+
+    var bmi = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/bmi?age=0&height=0&weight=0",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+        }
+    }
+    
+    $.ajax(bmi).done(function (response) {
+        console.log(response);
+    });
+
+    //.....Ideal Weight 
+
+    var idealweight = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/idealweight?weight=70&gender=male&height=178",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+        }
+    }
+    
+    $.ajax(idealweight).done(function (response) {
+        console.log(response);
+    });
+
+    //.........body fat
+
+
+    var bodyFat = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/bodyfat?age=22&weight=70&gender=male&height=178",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+        }
+    }
+    
+    $.ajax(bodyFat).done(function (response) {
+        console.log(response);
+    });
+
+    //........ daily calories
+
+    var dailyCalories = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth=185&age=25&gender=male&weigth=88",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+        }
+    }
+    
+    $.ajax(dailyCalories).done(function (response) {
+        console.log(response);
+    });
+
