@@ -96,7 +96,7 @@ a { color: white; text-decoration: none; }
 }
 
 table.greenTable {
-    font-family: Georgia, serif;
+    font-family: fantasy;
     border: 6px solid #000000;
     background-color: #f8f8f8;
     width: 100%;
@@ -120,7 +120,7 @@ table.greenTable {
     border-bottom: 0px solid #444444;
   }
   table.greenTable thead th {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: #0A0A0A;
     text-align: left;

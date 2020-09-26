@@ -209,7 +209,7 @@ $("#totalBtn").on("click",
     //... BMI
 
 
-    var settings = {
+    var bmi = {
         "async": true,
         "crossDomain": true,
         "url": "https://fitness-calculator.p.rapidapi.com/bmi?age=0&height=0&weight=0",
@@ -220,13 +220,13 @@ $("#totalBtn").on("click",
         }
     }
     
-    $.ajax(settings).done(function (response) {
+    $.ajax(bmi).done(function (response) {
         console.log(response);
     });
 
     //.....Ideal Weight 
 
-    var settings = {
+    var idealweight = {
         "async": true,
         "crossDomain": true,
         "url": "https://fitness-calculator.p.rapidapi.com/idealweight?weight=70&gender=male&height=178",
@@ -237,17 +237,17 @@ $("#totalBtn").on("click",
         }
     }
     
-    $.ajax(settings).done(function (response) {
+    $.ajax(idealweight).done(function (response) {
         console.log(response);
     });
 
     //.........body fat
 
 
-    var settings = {
+    var bodyFat = {
         "async": true,
         "crossDomain": true,
-        "url": "https://fitness-calculator.p.rapidapi.com/bodyfat?waist=96&gender=male&neck=50&heigth=178&hip=92&age=25&weigth=70",
+        "url": "https://fitness-calculator.p.rapidapi.com/bodyfat?"
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
@@ -255,13 +255,13 @@ $("#totalBtn").on("click",
         }
     }
     
-    $.ajax(settings).done(function (response) {
+    $.ajax(bodyFat).done(function (response) {
         console.log(response);
     });
 
     //........ daily calories
 
-    var settings = {
+    var dailyCalories = {
         "async": true,
         "crossDomain": true,
         "url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth=185&age=25&gender=male&weigth=88",
@@ -272,7 +272,7 @@ $("#totalBtn").on("click",
         }
     }
     
-    $.ajax(settings).done(function (response) {
+    $.ajax(dailyCalories).done(function (response) {
         console.log(response);
     });
 
