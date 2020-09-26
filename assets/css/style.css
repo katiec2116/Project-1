@@ -68,7 +68,8 @@ img {
 .name{
     font-size: 35px;
     font-weight: bolder;
-    color: whitesmoke
+    color: whitesmoke;
+    text-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0), 0 0 10px #000000, 0 0 15px #000000;
 }
 
 .headerText{
@@ -79,7 +80,9 @@ img {
     margin: auto;
     border-radius: 25px;
     padding: 15px;
-    background-color:rgb(255, 255, 255, 0.2)
+    background-color:rgb(255, 255, 255, 0.2);
+    box-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0), 0 0 10px #000000, 0 0 15px #000000;
+    text-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0), 0 0 10px #000000;
      
 }
 
