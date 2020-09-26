@@ -17,14 +17,19 @@ body {
 .select {
     border-radius: 1cm;
 }
-
+.input{
+    border: 1px solid black;
+}
 footer {
-    padding: 15px;
     clear: both;
     font-family: 'Poppins', sans-serif;
     text-align: center;
     color:rgb(0, 0, 0);
     background-color: #FA85C4ff; 
+}
+
+.footerDiv{
+    background-color: orange;
 }
 
 i{
@@ -95,6 +100,21 @@ a { color: white; text-decoration: none; }
   animation: bounce 2s infinite;
 }
 
+table, th, td {
+    border: 2px solid black;
+    padding-left:5px;
+    padding-right: 5px;
+  }
+th{
+    background-color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;;
+}
+td{
+    background-color: rgb(194, 191, 191);
+    font-family: 'Poppins', sans-serif;
+}
+
 .totalDiv {
     position:relative;
     bottom:0%;
@@ -110,7 +130,7 @@ a { color: white; text-decoration: none; }
     box-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0);
 }
 
-table.greenTable {
+/* table.greenTable {
     font-family: fantasy;
     border: 6px solid #000000;
     background-color: #f8f8f8;
@@ -147,7 +167,7 @@ table.greenTable {
   
   table.greenTable tfoot td {
     font-size: 13px;
-  }
+  } */
 
 
 

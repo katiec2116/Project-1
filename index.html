@@ -12,12 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <!-- GoogleFonts stylesheet -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Syncopate:wght@700&display=swap" rel="stylesheet">
-     <!-- reset css -->
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-   
-
-
+  
 </head>
 
 <body>
@@ -117,7 +114,7 @@
                                 <div class="field">
                                     <label class="label">Breakfast</label>
                                     <div class="control">
-                                        <input class="input" type="text" id="food">
+                                        <input class="input mb-1" type="text" id="food">
                                         <button type="submit" id="foodBtnBreakfast" class="button is-small mr-3"><i
                                                 class="fas fa-utensils fa-lg" aria-hidden="true"></i></button>
                                     </div>
@@ -125,7 +122,7 @@
                                 <div class="field">
                                     <label class="label">Lunch</label>
                                     <div class="control">
-                                        <input class="input" type="text" id="foodLunch">
+                                        <input class="input mb-1" type="text" id="foodLunch">
                                         <button type="submit" id="foodBtnLunch" class="button is-small mr-3"><i
                                                 class="fas fa-utensils fa-lg" aria-hidden="true"></i></button>
                                     </div>
@@ -133,7 +130,7 @@
                                 <div class="field">
                                     <label class="label">Dinner</label>
                                     <div class="control">
-                                        <input class="input" type="text" id="foodDinner">
+                                        <input class="input mb-1" type="text" id="foodDinner">
                                         <button type="submit" id="foodBtnDinner" class="button is-small mr-3"><i
                                                 class="fas fa-utensils fa-lg" aria-hidden="true"></i></button>
                                     </div>
@@ -144,40 +141,72 @@
                             <p class="title pb-4">Nutritional Information<button type="reset" value="Reset input"
                                     id="clear" class="button is-small is-link is-pulled-right mr-2"> <i
                                         class="fas fa-undo"></i>Reset Calculator</button></p>
-                            <div class="foodContent field is-horizontal">
+                            <div class="foodContent field is-horizontal pr-3 pl-3">
+                                <div class="control">
+                                    <p class="subtitle mb-0">Breakfast</p>
+
+                                    <table class="breakfast">
+                                        <tr class="table-header">
+                                            <th class="item">Item</th>
+                                            <th class="calories">Calories</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="control">
+                                    <p class="subtitle mb-0">Lunch</p>
+
+                                    <table class="lunch">
+                                        <tr class="table-header">
+                                            <th class="item">Item</th>
+                                            <th class="calories">Calories</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="control">
+                                    <p class="subtitle mb-0">Dinner</p>
+
+                                    <table class="dinner">
+                                        <tr class="table-header">
+                                            <th class="item">Item</th>
+                                            <th class="calories">Calories</th>
+                                    </table>
+                                </div>
+                            </div>
+
+                                    <!-- <div class="foodContent field is-horizontal"> 
                                 <div class="control">
                                     <p class="subtitle">Breakfast</p>
                                     <div class="content2">
-                                        <!-- Content -->
+                                        
                                     </div>
                                 </div>
                                 <div class="control">
                                     <p class="subtitle">Lunch</p>
                                     <div class="contentLunch">
-                                        <!-- Content -->
+                                        
                                     </div>
                                 </div>
                                 <div class="control">
                                     <p class="subtitle">Dinner</p>
                                     <div class="contentDinner">
-                                        <!-- Content -->
+                                        
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="control totalDiv has-text-centered">
-                                <!-- <p class="subtitle mb-0"><button type="submit" id="totalBtn"
+                                    <p class="subtitle mb-0"><button type="submit" id="totalBtn"
                                         class="button is-small "> Get Total Calories for the
-                                        day</button></p> -->
-                                <!-- <div class="totalCalDisplay"> -->
-                                    
+                                        day</button></p>
+                                    <!-- <div class="totalCalDisplay"> -->
+
                                     <!-- Content -->
                                 </div>
                             </div>
-                </article>
+                        </article>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
     </div>
 
     <footer class="footer pt-1 pb-1">
