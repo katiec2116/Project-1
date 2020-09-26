@@ -101,6 +101,13 @@ $("#foodBtnLunch").on("click", function (event) {
         });
 });
 
+
+$("#arrow").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".container").offset().top},
+        'slow');
+});
+
 //on click function for submitting food(Dinner)
 $("#foodBtnDinner").on("click", function (event) {
     event.preventDefault();
