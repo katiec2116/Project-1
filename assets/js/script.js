@@ -247,7 +247,7 @@ $("#totalBtn").on("click",
     var bodyFat = {
         "async": true,
         "crossDomain": true,
-        "url": "https://fitness-calculator.p.rapidapi.com/bodyfat?"
+        "url": "https://fitness-calculator.p.rapidapi.com/bodyfat?age=22&weight=70&gender=male&height=178",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
