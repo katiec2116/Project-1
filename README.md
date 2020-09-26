@@ -3,6 +3,8 @@
 
 A fitness calculator with calorie tracker
 
+![GitHub repo size](https://img.shields.io/github/repo-size/katiec2116/80-20-Rule) 
+
 
 
 Link 

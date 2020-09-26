@@ -8,15 +8,15 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <!-- reset css -->
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <!-- Bulma stylesheet linke -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <!-- GoogleFonts stylesheet -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Poppins:wght@500;800&display=swap"
         rel="stylesheet">
-
+    <!-- Bulma stylesheet linke -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <!-- reset css -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
 
 </head>
 
@@ -31,14 +31,15 @@
                 (like heart disease and cancer), and promote your overall health.
             </div>
             <div class="arrow bounce">
-                <a class="fa fa-arrow-down fa-2x" href="#"></a>
-            </div>
+                <a class="fa fa-arrow-down fa-2x" id = "arrow" href="#"></a>
+              </div>
+
         </div>
     </section>
     <div class="container">
 
         <div class="tile is-ancestor">
-            <div class="tile is-vertical is-4">
+            <div class="tile is-vertical is-4 mr-4">
                 <div class="tile">
                     <div class="tile is-parent is-vertical">
                         <article class="tile is-child notification is-notification has-background-grey-lighter">
@@ -48,19 +49,19 @@
                                     <div class="field">
                                         <label class="label">Age</label>
                                         <div class="control">
-                                            <input class="input" type="number">
+                                            <input class="ageInput" type="number">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Weight</label>
                                         <div class="control">
-                                            <input class="input" type="number">
+                                            <input class="weightInput" type="number">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Height</label>
                                         <div class="control">
-                                            <input class="input" type="number">
+                                            <input class="heightInput" type="number">
                                         </div>
                                     </div>
                                     <div class="field">
@@ -75,15 +76,33 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="button">Submit</button>
-                                    <button class="button">Cancel</button>
+                                    <button class="buttonS">Submit</button>
+                                    <button class="buttonc">Cancel</button>
                                 </div>
                             </div>
                         </article>
                         <article class="tile is-child notification is-notification has-background-grey-lighter">
                             <p class="title pb-4">Fitness Results</p>
                             <div class="field is-horizontal is-grouped">
-                                stuff goes here
+                                <table class="greenTable">
+                                    <thead>
+                                        <tr>
+                                            <th >BMI</th>
+                                            <th >Ideal Weight</th>
+                                            <th >Body Fat</th>
+                                            <th >Daily Calories</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class = "BMI"> value</td>
+                                            <td class = "idealWeight" >Value</td>
+                                            <td class = "bodyFat">value</td>
+                                            <td class = "dailyC">Value</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     </div>

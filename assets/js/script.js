@@ -4,7 +4,7 @@ let searchedFood;
 let breakfast = [];
 let lunch = [];
 let dinner = [];
-
+let fitnessCalculator;
 
 // get foods from local storage
 getFoods();
@@ -101,6 +101,14 @@ $("#foodBtnLunch").on("click", function (event) {
         });
 });
 
+
+$("#arrow").click(function () {
+    $('html,body').animate({
+        scrollTop: $(".container").offset().top
+    },
+        'slow');
+});
+
 //on click function for submitting food(Dinner)
 $("#foodBtnDinner").on("click", function (event) {
     event.preventDefault();
@@ -166,42 +174,131 @@ $("#totalBtn").on("click",
     });
 
 
-    // local storage for food data
-    function saveFoods() {
-        localStorage.setItem("breakfast", JSON.stringify(breakfast));
-        localStorage.setItem("lunch", JSON.stringify(lunch));
-        localStorage.setItem("dinner", JSON.stringify(dinner));
+// local storage for food data
+function saveFoods() {
+    localStorage.setItem("breakfast", JSON.stringify(breakfast));
+    localStorage.setItem("lunch", JSON.stringify(lunch));
+    localStorage.setItem("dinner", JSON.stringify(dinner));
+}
+
+function getFoods() {
+    // checks if local storage is empty
+    if (localStorage.getItem("breakfast") != null) {
+        breakfast = JSON.parse(localStorage.getItem("breakfast"));
+        // generate p tag to display each food item
+        breakfast.forEach(item => {
+            let food = $("<p>").text(item.name + " Calories: " + item.calories);
+            // add city to search history lost and add data value attribute
+            $(".content2").append(food);
+        })
+    }
+    // checks if local storage is empty
+    if (localStorage.getItem("lunch") != null) {
+        lunch = JSON.parse(localStorage.getItem("lunch"));
+        // generate p tag to display each food item
+        lunch.forEach(item => {
+            let food = $("<p>").text(item.name + " Calories: " + item.calories);
+            // add city to search history lost and add data value attribute
+            $(".contentLunch").append(food);
+        })
+    }
+    // checks if local storage is empty
+    if (localStorage.getItem("dinner") != null) {
+        dinner = JSON.parse(localStorage.getItem("dinner"));
+        // generate p tag to display each food item
+        dinner.forEach(item => {
+            let food = $("<p>").text(item.name + " Calories: " + item.calories);
+            // add city to search history lost and add data value attribute
+            $(".contentDinner").append(food);
+        })
+    }
+}
+
+//... BMI
+
+// onclick for fitness calculator
+$(".buttonS").on("click", function (event) {
+    event.preventDefault();
+    age = $(".ageInput").val();
+    console.log(age);
+    weight = $(".weightInput").val();
+    console.log(weight);
+    height = $(".heightInput").val();
+    console.log(height);
+    gender = $(".select option:selected").val();
+    console.log(gender);
+
+
+
+    var bmi = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&height=" + height + "&weight=" + weight,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+        }
+    }
+    $.ajax(bmi).done(function (response) {
+        var result = response.bmi.toFixed(2);
+        $(".BMI").text(result);
+    });
+
+
+    //.....Ideal Weight 
+
+    var idealweight = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/idealweight?weight=" + weight + "&gender=" + gender + "&height=" + height,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+        }
     }
 
-    function getFoods() {
-        // checks if local storage is empty
-        if (localStorage.getItem("breakfast") != null) {
-            breakfast = JSON.parse(localStorage.getItem("breakfast"));
-            // generate p tag to display each food item
-            breakfast.forEach(item => {
-                let food = $("<p>").text(item.name + " Calories: " + item.calories);
-                // add city to search history lost and add data value attribute
-                $(".content2").append(food);
-            })
-        }
-        // checks if local storage is empty
-        if (localStorage.getItem("lunch") != null) {
-            lunch = JSON.parse(localStorage.getItem("lunch"));
-            // generate p tag to display each food item
-            lunch.forEach(item => {
-                let food = $("<p>").text(item.name + " Calories: " + item.calories);
-                // add city to search history lost and add data value attribute
-                $(".contentLunch").append(food);
-            })
-        }
-        // checks if local storage is empty
-        if (localStorage.getItem("dinner") != null) {
-            dinner = JSON.parse(localStorage.getItem("dinner"));
-            // generate p tag to display each food item
-            dinner.forEach(item => {
-                let food = $("<p>").text(item.name + " Calories: " + item.calories);
-                // add city to search history lost and add data value attribute
-                $(".contentDinner").append(food);
-            })
+    $.ajax(idealweight).done(function (response) {
+        var result = response.Devine.toFixed(2);
+        $(".idealWeight").text(result);
+    });
+
+    //.........body fat
+
+
+    var bodyFat = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/bodyfat?age=" + age + "&weight=" + weight + "&gender=" + gender + "&height=" + height,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
         }
     }
+
+    $.ajax(bodyFat).done(function (response) {
+        var result = response['Body Fat (BMI method)'].toFixed(2);
+    $(".bodyFat").text(result);
+    });
+
+        //........ daily calories
+
+    var dailyCalories = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth=" + height + "&age=" + age + "&gender=" + gender + "&weigth=" + weight,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+        }
+    }   
+
+    $.ajax(dailyCalories).done(function (response) {
+        var result = response.data.BMR.toFixed(2);
+        $(".dailyC").text(result);
+    });
+
+});

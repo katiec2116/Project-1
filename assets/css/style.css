@@ -64,23 +64,30 @@ img {
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
+    width:80%;
+}
+strong{
+    color:whitesmoke;
 }
 
 .name{
     font-size: 35px;
     font-weight: bolder;
-    color: whitesmoke
+    color: whitesmoke;
+    text-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0), 0 0 10px #000000, 0 0 15px #000000;
 }
 
 .headerText{
     color: white;
     font-size: 18px;
-    border: 2px whitesmoke solid;
-    width:50%;
+    border: 3px whitesmoke solid;
+    width:45%;
     margin: auto;
     border-radius: 25px;
     padding: 15px;
-    background-color:rgb(255, 255, 255, 0.2)
+    background-color:rgb(255, 255, 255, 0.2);
+    box-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0), 0 0 10px #000000, 0 0 25px #000000;
+    text-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0), 0 0 10px #000000, 0 0 15px #000000;;
      
 }
 
@@ -96,6 +103,47 @@ a { color: white; text-decoration: none; }
   animation: bounce 2s infinite;
 }
 
+table.greenTable {
+    font-family: fantasy;
+    border: 6px solid #000000;
+    background-color: #f8f8f8;
+    width: 100%;
+    text-align: center;
+  }
+  table.greenTable td, table.greenTable th {
+    border: 5px solid #000000;
+    padding: 3px 3px;
+  }
+  table.greenTable tbody td {
+    font-size: 18px;
+  }
+  table.greenTable tr:nth-child(even) {
+    background: #ffffff;
+  }
+  table.greenTable thead {
+    background: #FFFFFF;
+    background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
+    border-bottom: 0px solid #444444;
+  }
+  table.greenTable thead th {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0A0A0A;
+    text-align: left;
+    border-left: 2px solid #76FF8B;
+  }
+  table.greenTable thead th:first-child {
+    border-left: none;
+  }
+  
+  table.greenTable tfoot td {
+    font-size: 13px;
+  }
+
+
+
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
       transform: translateY(0);
@@ -108,3 +156,8 @@ a { color: white; text-decoration: none; }
     }
   }
 
+  @media screen and (max-width: 1000px) {
+    .headerText {
+      width: 100%;
+    }
+  }
