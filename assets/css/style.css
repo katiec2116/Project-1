@@ -3,14 +3,7 @@ body {
     height:100%;  
     font-family: 'Poppins', sans-serif; 
 }
-
-.header {   
-    margin-bottom: 90px;
-   font-size: 40pt;
-   font-family: 'Poppins', sans-serif;;
-   text-align: center;
-   color: mediumblue;
-}   
+  
 
 .field{
     color: black;
@@ -19,11 +12,6 @@ body {
     display: flex;
     justify-content: space-between;
     text-align: justify;
-}
-.containerFitness {
-    border: 9px solid #E3A340;
-    border-radius: 18px;
-    padding:10px ;
 }
     
 .select {
