@@ -75,7 +75,7 @@ img {
     color: white;
     font-size: 18px;
     border: 2px whitesmoke solid;
-    width:50%;
+    width:80%;
     margin: auto;
     border-radius: 25px;
     padding: 15px;
@@ -148,3 +148,8 @@ table.greenTable {
     }
   }
 
+  @media screen and (max-width: 1000px) {
+    .headerText {
+      width: 100%;
+    }
+  }
