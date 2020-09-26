@@ -215,6 +215,20 @@ $("#totalBtn").on("click",
 
     //... BMI
 
+// onclick for fitness calculator
+$(".buttonS").on("click", function (event) {
+    event.preventDefault();
+    age = $(".ageInput").val();
+    console.log(age);
+    weight = $(".weightInput").val();
+    console.log(weight);
+    height = $(".heightInput").val();
+    console.log(height);
+    gender = $(".select option:selected").val();
+    console.log(gender);
+
+});
+
 
     var bmi = {
         "async": true,
