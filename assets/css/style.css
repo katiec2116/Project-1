@@ -111,9 +111,17 @@ a { color: white; text-decoration: none; }
 }
 
 td{
-    padding-left: 3px;
-    padding-right: 3px;
+    background-color: rgb(194, 191, 191)
 }
+table, th, td {
+    border: 2px solid black;
+    padding-left:5px;
+    padding-right: 5px;
+  }
+th{
+    background-color: whitesmoke;
+}
+
 
 .totalDiv {
     position:relative;
