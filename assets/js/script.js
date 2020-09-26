@@ -13,9 +13,9 @@ getTotalCal();
 // clear button to empty local storage and display
 $("#clear").on("click", function (event) {
     event.preventDefault();
-    $(".content2").empty();
-    $(".contentLunch").empty();
-    $(".contentDinner").empty();
+    $(".breakfast").find("tr:gt(0)").remove();
+    $(".lunch").find("tr:gt(0)").remove();
+    $(".dinner").find("tr:gt(0)").remove();
     $(".totalCal").text("Total Calories: 0")
     localStorage.clear();
     
