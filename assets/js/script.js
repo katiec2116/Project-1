@@ -10,7 +10,7 @@ let fitnessCalculator;
 getFoods();
 getTotalCal();
 
-// clear button to empty local storage and display
+// clear button to empty local storage and display for food 
 $("#clear").on("click", function (event) {
     event.preventDefault();
     $(".breakfast").find("tr:gt(0)").remove();
@@ -18,6 +18,15 @@ $("#clear").on("click", function (event) {
     $(".dinner").find("tr:gt(0)").remove();
     $(".totalCal").text("Total Calories: 0")
     localStorage.clear();
+    
+});
+// reset for fitness info
+$("#clearFit").on("click", function (event) {
+    event.preventDefault();
+    $(".BMI").text("0");
+    $(".idealWeight").text("0");
+    $(".bodyFat").text("0");
+    $(".dailyC").text("0");
     
 });
 // on click function for submitting food (Breakfast)
