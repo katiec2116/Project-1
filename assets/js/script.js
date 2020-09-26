@@ -209,20 +209,22 @@ $("#totalBtn").on("click",
     //... BMI
 
 
-    var bmi = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://fitness-calculator.p.rapidapi.com/bmi?age=0&height=0&weight=0",
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
-            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+    function bmi(){
+        var bmi = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://fitness-calculator.p.rapidapi.com/bmi?",
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+                "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+            }
         }
+        $.ajax(bmi).done(function (response) {
+            var result = response.bmi.toFixed(2);
+            $(".BMI").text(result);
+        });
     }
-    
-    $.ajax(bmi).done(function (response) {
-        console.log(response);
-    });
 
     //.....Ideal Weight 
 
