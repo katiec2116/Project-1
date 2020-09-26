@@ -34,6 +34,8 @@ $("#foodBtnBreakfast").on("click", function (event) {
     event.preventDefault()
     // var to hold sumbitted food
     searchedFood = $("#food").val();
+    // Clears form 
+    $("#food").val("");
     var queryURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
     // call to api to generate data
     $.ajax({
@@ -77,6 +79,8 @@ $("#foodBtnLunch").on("click", function (event) {
     event.preventDefault();
     // var to hold sumbitted food
     searchedFood = $("#foodLunch").val();
+    // Clears form 
+    $("#food").val("");
     var queryURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
     // call to api to generate data
     $.ajax({
@@ -127,7 +131,8 @@ $("#foodBtnDinner").on("click", function (event) {
     event.preventDefault();
     // var to hold sumbitted food
     searchedFood = $("#foodDinner").val();
-    // dinner.push(searchedFood);
+    // Clears form 
+    $("#food").val("");
     var queryURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
     // call to api to generate data
     $.ajax({
