@@ -31,12 +31,15 @@ body {
 }
 
 footer {
-    padding: 15px;
     clear: both;
     font-family: 'Poppins', sans-serif;
     text-align: center;
     color:rgb(0, 0, 0);
     background-color: #FA85C4ff; 
+}
+
+.footerDiv{
+    background-color: orange;
 }
 
 i{
@@ -105,6 +108,11 @@ a { color: white; text-decoration: none; }
   -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
+}
+
+td{
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .totalDiv {

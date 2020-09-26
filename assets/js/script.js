@@ -53,7 +53,7 @@ $("#foodBtnBreakfast").on("click", function (event) {
                 // capitalizes food
                 d.name = d.name.charAt(0).toUpperCase() + d.name.substr(1);
                 // add to page
-                $(".content2").append($("<p>").text(d.name + " Calories: " + d.calories));
+                $('.breakfast tr:last').after('<tr><td>' + d.name+ '</td><td>' + d.calories + '</td></tr>');
                 // adds to array
                 breakfast.push(d)
                 // saves food to local storage
@@ -95,7 +95,7 @@ $("#foodBtnLunch").on("click", function (event) {
                 // capitalizes food
                 d.name = d.name.charAt(0).toUpperCase() + d.name.substr(1);
                 // add to page
-                $(".contentLunch").append($("<p>").text(d.name + " Calories: " + d.calories));
+                $('.lunch tr:last').after('<tr><td>' + d.name+ '</td><td>' + d.calories + '</td></tr>');
                 // adds to array
                 lunch.push(d)
                 // saves food to local storage
@@ -146,7 +146,8 @@ $("#foodBtnDinner").on("click", function (event) {
                 // capitalizes food
                 d.name = d.name.charAt(0).toUpperCase() + d.name.substr(1);
                 // add to page
-                $(".contentDinner").append($("<p>").text(d.name + " Calories: " + d.calories));
+                // $(".contentDinner").append($("<p>").text(d.name + " Calories: " + d.calories));
+                $('.dinner tr:last').after('<tr><td>' + d.name+ '</td><td>' + d.calories + '</td></tr>');
                 // adds to array
                 dinner.push(d);
                 // saves food to local storage
@@ -190,9 +191,9 @@ function getFoods() {
         breakfast = JSON.parse(localStorage.getItem("breakfast"));
         // generate p tag to display each food item
         breakfast.forEach(item => {
-            let food = $("<p>").text(item.name + " Calories: " + item.calories);
+            // let food = $("<p>").text(item.name + " Calories: " + item.calories);
             // add city to search history lost and add data value attribute
-            $(".content2").append(food);
+            $('.breakfast tr:last').after('<tr><td>' + item.name+ '</td><td>' + item.calories + '</td></tr>');
         })
     }
     // checks if local storage is empty
@@ -200,9 +201,9 @@ function getFoods() {
         lunch = JSON.parse(localStorage.getItem("lunch"));
         // generate p tag to display each food item
         lunch.forEach(item => {
-            let food = $("<p>").text(item.name + " Calories: " + item.calories);
+            // let food = $("<p>").text(item.name + " Calories: " + item.calories);
             // add city to search history lost and add data value attribute
-            $(".contentLunch").append(food);
+            $('.lunch tr:last').after('<tr><td>' + item.name+ '</td><td>' + item.calories + '</td></tr>');
         })
     }
     // checks if local storage is empty
@@ -210,9 +211,9 @@ function getFoods() {
         dinner = JSON.parse(localStorage.getItem("dinner"));
         // generate p tag to display each food item
         dinner.forEach(item => {
-            let food = $("<p>").text(item.name + " Calories: " + item.calories);
+            // let food = $("<p>").text(item.name + " Calories: " + item.calories);
             // add city to search history lost and add data value attribute
-            $(".contentDinner").append(food);
+            $('.dinner tr:last').after('<tr><td>' + item.name+ '</td><td>' + item.calories + '</td></tr>');
         })
     }
 }
