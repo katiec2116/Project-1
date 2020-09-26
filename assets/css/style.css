@@ -55,6 +55,7 @@ i{
 }
 img {
     height:170px;
+    margin-top: 95px;
 }
 
 #hero-text{
@@ -67,13 +68,16 @@ img {
 }
 strong{
     color:whitesmoke;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 20px;
 }
 
 .name{
-    font-size: 35px;
+    font-size: 45px;
     font-weight: bolder;
     color: whitesmoke;
     text-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0), 0 0 10px #000000, 0 0 15px #000000;
+    font-family: 'Syncopate', sans-serif;
 }
 
 .headerText{
@@ -170,8 +174,24 @@ table.greenTable {
     }
   }
 
+  /* @media screen and (max-width: 1250px) {
+    .headerText {
+      width: 60%;
+    }
+} */
   @media screen and (max-width: 1000px) {
     .headerText {
       width: 100%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .headerText {
+      /* width: 100%; */
+      font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 535px) {
+    .name {
+        font-size: 30px;
     }
   }
