@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-=======
 // grabbing button by ID and creating an event
 
 let searchedFood;
 let breakfast = [];
 let lunch = [];
 let dinner = [];
-
+let fitnessCalculator;
 
 // get foods from local storage
 getFoods();
@@ -207,4 +205,74 @@ $("#totalBtn").on("click",
             })
         }
     }
->>>>>>> 7fcd02ec53967ce4bf2471149ece6de8c2d2bf54
+
+    //... BMI
+
+
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/bmi?age=0&height=0&weight=0",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+        }
+    }
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+
+    //.....Ideal Weight 
+
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/idealweight?weight=70&gender=male&height=178",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+        }
+    }
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+
+    //.........body fat
+
+
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/bodyfat?waist=96&gender=male&neck=50&heigth=178&hip=92&age=25&weigth=70",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+        }
+    }
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+
+    //........ daily calories
+
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://fitness-calculator.p.rapidapi.com/dailycalory?heigth=185&age=25&gender=male&weigth=88",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+            "x-rapidapi-key": "515c74fb86mshcb44e437cf75abcp1b8dc7jsn1ac8f5643c83"
+        }
+    }
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+
