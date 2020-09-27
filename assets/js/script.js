@@ -6,18 +6,27 @@ let lunch = [];
 let dinner = [];
 let fitnessCalculator;
 
-// get foods from local storage
+// get foods from local storage and display saved content
 getFoods();
 getTotalCal();
 
-// clear button to empty local storage and display
+// clear button to empty local storage and display for food 
 $("#clear").on("click", function (event) {
     event.preventDefault();
-    $(".content2").empty();
-    $(".contentLunch").empty();
-    $(".contentDinner").empty();
+    $(".breakfast").find("tr:gt(0)").remove();
+    $(".lunch").find("tr:gt(0)").remove();
+    $(".dinner").find("tr:gt(0)").remove();
     $(".totalCal").text("Total Calories: 0")
     localStorage.clear();
+    
+});
+// reset for fitness info
+$("#clearFit").on("click", function (event) {
+    event.preventDefault();
+    $(".BMI").text("0");
+    $(".idealWeight").text("0");
+    $(".bodyFat").text("0");
+    $(".dailyC").text("0");
     
 });
 // on click function for submitting food (Breakfast)
@@ -25,6 +34,8 @@ $("#foodBtnBreakfast").on("click", function (event) {
     event.preventDefault()
     // var to hold sumbitted food
     searchedFood = $("#food").val();
+    // Clears form 
+    $("#food").val("");
     var queryURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
     // call to api to generate data
     $.ajax({
@@ -56,7 +67,7 @@ $("#foodBtnBreakfast").on("click", function (event) {
                 $('.breakfast tr:last').after('<tr><td>' + d.name+ '</td><td>' + d.calories + '</td></tr>');
                 // adds to array
                 breakfast.push(d)
-                // saves food to local storage
+                // saves food to local storage & auto calculate total calories
                 saveFoods();
                 getTotalCal();
             }
@@ -68,6 +79,8 @@ $("#foodBtnLunch").on("click", function (event) {
     event.preventDefault();
     // var to hold sumbitted food
     searchedFood = $("#foodLunch").val();
+    // Clears form 
+    $("#foodLunch").val("");
     var queryURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
     // call to api to generate data
     $.ajax({
@@ -98,14 +111,14 @@ $("#foodBtnLunch").on("click", function (event) {
                 $('.lunch tr:last').after('<tr><td>' + d.name+ '</td><td>' + d.calories + '</td></tr>');
                 // adds to array
                 lunch.push(d)
-                // saves food to local storage
+                // saves food to local storage & auto calculate total calories
                 saveFoods();
                 getTotalCal();
             }
         });
 });
 
-
+// arrow to auto scroll on click
 $("#arrow").click(function () {
     $('html,body').animate({
         scrollTop: $(".container").offset().top
@@ -118,7 +131,8 @@ $("#foodBtnDinner").on("click", function (event) {
     event.preventDefault();
     // var to hold sumbitted food
     searchedFood = $("#foodDinner").val();
-    // dinner.push(searchedFood);
+    // Clears form 
+    $("#foodDinner").val("");
     var queryURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
     // call to api to generate data
     $.ajax({
@@ -150,7 +164,7 @@ $("#foodBtnDinner").on("click", function (event) {
                 $('.dinner tr:last').after('<tr><td>' + d.name+ '</td><td>' + d.calories + '</td></tr>');
                 // adds to array
                 dinner.push(d);
-                // saves food to local storage
+                // saves food to local storage & auto calculate total calories
                 saveFoods();
                 getTotalCal();
             }
@@ -158,7 +172,6 @@ $("#foodBtnDinner").on("click", function (event) {
 });
 
 // Adds Calories together 
-// $("#totalBtn").on("click",
     function getTotalCal() {
         $(".totalDiv").empty();
         var total = 0;
@@ -173,7 +186,7 @@ $("#foodBtnDinner").on("click", function (event) {
         }
 
         var x = $("<p>").text("Total Calories: " + total.toFixed(0)).addClass("totalCal")
-
+        // display total on the page
         $(".totalDiv").append(x);
     };
 
@@ -189,30 +202,24 @@ function getFoods() {
     // checks if local storage is empty
     if (localStorage.getItem("breakfast") != null) {
         breakfast = JSON.parse(localStorage.getItem("breakfast"));
-        // generate p tag to display each food item
+        // add new row for each item
         breakfast.forEach(item => {
-            // let food = $("<p>").text(item.name + " Calories: " + item.calories);
-            // add city to search history lost and add data value attribute
             $('.breakfast tr:last').after('<tr><td>' + item.name+ '</td><td>' + item.calories + '</td></tr>');
         })
     }
     // checks if local storage is empty
     if (localStorage.getItem("lunch") != null) {
         lunch = JSON.parse(localStorage.getItem("lunch"));
-        // generate p tag to display each food item
+        // add new row for each item
         lunch.forEach(item => {
-            // let food = $("<p>").text(item.name + " Calories: " + item.calories);
-            // add city to search history lost and add data value attribute
             $('.lunch tr:last').after('<tr><td>' + item.name+ '</td><td>' + item.calories + '</td></tr>');
         })
     }
     // checks if local storage is empty
     if (localStorage.getItem("dinner") != null) {
         dinner = JSON.parse(localStorage.getItem("dinner"));
-        // generate p tag to display each food item
+        // add new row for each item
         dinner.forEach(item => {
-            // let food = $("<p>").text(item.name + " Calories: " + item.calories);
-            // add city to search history lost and add data value attribute
             $('.dinner tr:last').after('<tr><td>' + item.name+ '</td><td>' + item.calories + '</td></tr>');
         })
     }
@@ -224,14 +231,12 @@ function getFoods() {
 $(".buttonS").on("click", function (event) {
     event.preventDefault();
     age = $(".ageInput").val();
-    console.log(age);
-    weight = $(".weightInput").val();
-    console.log(weight);
-    height = $(".heightInput").val();
-    console.log(height);
+    // convert entered data to kg and cm
+    weight = $(".weightInput").val()/2.20462262185;
+    height = $(".heightInput").val()/0.39370;
     gender = $(".select option:selected").val();
-    console.log(gender);
-
+    // add css to table on generation of data
+    $(".fitResults").addClass("displayFit");
 
 
     var bmi = {
@@ -245,8 +250,12 @@ $(".buttonS").on("click", function (event) {
         }
     }
     $.ajax(bmi).done(function (response) {
-        var result = response.bmi.toFixed(2);
+        var result = response.bmi.toFixed(1);
+        // show response in table
         $(".BMI").text(result);
+        // show ideal bmi in results below
+        $(".fitResults").append($("<p>").text("A healthy BMI range for you is " + response.healthy_bmi_range));
+
     });
 
 
@@ -264,8 +273,10 @@ $(".buttonS").on("click", function (event) {
     }
 
     $.ajax(idealweight).done(function (response) {
-        var result = response.Devine.toFixed(2);
-        $(".idealWeight").text(result);
+        var result = response.Devine*2.20462262185;
+        console.log(result.toFixed(1))
+        // show result in table
+        $(".idealWeight").text(result.toFixed(1));
     });
 
     //.........body fat
@@ -283,7 +294,8 @@ $(".buttonS").on("click", function (event) {
     }
 
     $.ajax(bodyFat).done(function (response) {
-        var result = response['Body Fat (BMI method)'].toFixed(2);
+        var result = response['Body Fat (BMI method)'].toFixed(1);
+        // show result in table
     $(".bodyFat").text(result);
     });
 
@@ -301,8 +313,12 @@ $(".buttonS").on("click", function (event) {
     }   
 
     $.ajax(dailyCalories).done(function (response) {
-        var result = response.data.BMR.toFixed(2);
+        var result = response.data.BMR.toFixed(0);
+        // show result in table
         $(".dailyC").text(result);
+        // show suggested calories in results below
+        $(".fitResults").append($("<p>").text("To gain weight, your daily calories should be " + response.data.goals.BMR['Weight gain'].calory.toFixed(0)))
+        $(".fitResults").append($("<p>").text("To lose weight, your daily calories should be " + response.data.goals.BMR['Weight loss'].calory.toFixed(0)))
     });
 
 });

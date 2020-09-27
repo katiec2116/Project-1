@@ -1,10 +1,12 @@
 body {
-    background-color: #FA85C4ff;
+    background-color: #002741;
     height:100%;  
     font-family: 'Poppins', sans-serif; 
 }
   
-
+.is-child{
+    box-shadow: 0 0 8px rgb(253, 253, 253);
+}
 .field{
     color: black;
 }
@@ -114,10 +116,15 @@ td{
     background-color: rgb(194, 191, 191);
     font-family: 'Poppins', sans-serif;
 }
-
-.totalDiv {
-    position:relative;
-    bottom:0%;
+small{
+    color: grey;
+    font-size:12px;
+}
+.displayFit{
+    border: 2px solid black;
+    padding: 10px;
+    margin-top:10px;
+    background-color:  rgb(238, 238, 238);
 }
 
 .totalDiv{
@@ -125,50 +132,13 @@ td{
     border: 3px whitesmoke solid;
     border-radius: 25px;
     width:30%;
-    margin:auto;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 60px;
+    font-weight: bold;
     background-color:rgb(255, 255, 255, 0.2);
     box-shadow: 0 0 2px rgb(65, 65, 65), 0 0 7px rgb(0, 0, 0);
 }
-
-/* table.greenTable {
-    font-family: fantasy;
-    border: 6px solid #000000;
-    background-color: #f8f8f8;
-    width: 100%;
-    text-align: center;
-  }
-  table.greenTable td, table.greenTable th {
-    border: 5px solid #000000;
-    padding: 3px 3px;
-  }
-  table.greenTable tbody td {
-    font-size: 18px;
-  }
-  table.greenTable tr:nth-child(even) {
-    background: #ffffff;
-  }
-  table.greenTable thead {
-    background: #FFFFFF;
-    background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
-    background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
-    border-bottom: 0px solid #444444;
-  }
-  table.greenTable thead th {
-    font-size: 20px;
-    font-weight: bold;
-    color: #0A0A0A;
-    text-align: left;
-    border-left: 2px solid #76FF8B;
-  }
-  table.greenTable thead th:first-child {
-    border-left: none;
-  }
-  
-  table.greenTable tfoot td {
-    font-size: 13px;
-  } */
-
 
 
 @keyframes bounce {
@@ -183,11 +153,7 @@ td{
     }
   }
 
-  /* @media screen and (max-width: 1250px) {
-    .headerText {
-      width: 60%;
-    }
-} */
+
   @media screen and (max-width: 1000px) {
     .headerText {
       width: 100%;
@@ -195,7 +161,6 @@ td{
   }
   @media screen and (max-width: 600px) {
     .headerText {
-      /* width: 100%; */
       font-size: 15px;
     }
   }
