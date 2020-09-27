@@ -6,7 +6,7 @@ let lunch = [];
 let dinner = [];
 let fitnessCalculator;
 
-// get foods from local storage
+// get foods from local storage and display saved content
 getFoods();
 getTotalCal();
 
@@ -67,7 +67,7 @@ $("#foodBtnBreakfast").on("click", function (event) {
                 $('.breakfast tr:last').after('<tr><td>' + d.name+ '</td><td>' + d.calories + '</td></tr>');
                 // adds to array
                 breakfast.push(d)
-                // saves food to local storage
+                // saves food to local storage & auto calculate total calories
                 saveFoods();
                 getTotalCal();
             }
@@ -111,14 +111,14 @@ $("#foodBtnLunch").on("click", function (event) {
                 $('.lunch tr:last').after('<tr><td>' + d.name+ '</td><td>' + d.calories + '</td></tr>');
                 // adds to array
                 lunch.push(d)
-                // saves food to local storage
+                // saves food to local storage & auto calculate total calories
                 saveFoods();
                 getTotalCal();
             }
         });
 });
 
-
+// arrow to auto scroll on click
 $("#arrow").click(function () {
     $('html,body').animate({
         scrollTop: $(".container").offset().top
@@ -164,7 +164,7 @@ $("#foodBtnDinner").on("click", function (event) {
                 $('.dinner tr:last').after('<tr><td>' + d.name+ '</td><td>' + d.calories + '</td></tr>');
                 // adds to array
                 dinner.push(d);
-                // saves food to local storage
+                // saves food to local storage & auto calculate total calories
                 saveFoods();
                 getTotalCal();
             }
@@ -172,7 +172,6 @@ $("#foodBtnDinner").on("click", function (event) {
 });
 
 // Adds Calories together 
-// $("#totalBtn").on("click",
     function getTotalCal() {
         $(".totalDiv").empty();
         var total = 0;
@@ -187,7 +186,7 @@ $("#foodBtnDinner").on("click", function (event) {
         }
 
         var x = $("<p>").text("Total Calories: " + total.toFixed(0)).addClass("totalCal")
-
+        // display total on the page
         $(".totalDiv").append(x);
     };
 
@@ -203,30 +202,24 @@ function getFoods() {
     // checks if local storage is empty
     if (localStorage.getItem("breakfast") != null) {
         breakfast = JSON.parse(localStorage.getItem("breakfast"));
-        // generate p tag to display each food item
+        // add new row for each item
         breakfast.forEach(item => {
-            // let food = $("<p>").text(item.name + " Calories: " + item.calories);
-            // add city to search history lost and add data value attribute
             $('.breakfast tr:last').after('<tr><td>' + item.name+ '</td><td>' + item.calories + '</td></tr>');
         })
     }
     // checks if local storage is empty
     if (localStorage.getItem("lunch") != null) {
         lunch = JSON.parse(localStorage.getItem("lunch"));
-        // generate p tag to display each food item
+        // add new row for each item
         lunch.forEach(item => {
-            // let food = $("<p>").text(item.name + " Calories: " + item.calories);
-            // add city to search history lost and add data value attribute
             $('.lunch tr:last').after('<tr><td>' + item.name+ '</td><td>' + item.calories + '</td></tr>');
         })
     }
     // checks if local storage is empty
     if (localStorage.getItem("dinner") != null) {
         dinner = JSON.parse(localStorage.getItem("dinner"));
-        // generate p tag to display each food item
+        // add new row for each item
         dinner.forEach(item => {
-            // let food = $("<p>").text(item.name + " Calories: " + item.calories);
-            // add city to search history lost and add data value attribute
             $('.dinner tr:last').after('<tr><td>' + item.name+ '</td><td>' + item.calories + '</td></tr>');
         })
     }
@@ -238,13 +231,9 @@ function getFoods() {
 $(".buttonS").on("click", function (event) {
     event.preventDefault();
     age = $(".ageInput").val();
-    console.log(age);
     weight = $(".weightInput").val();
-    console.log(weight);
     height = $(".heightInput").val();
-    console.log(height);
     gender = $(".select option:selected").val();
-    console.log(gender);
 
 
 
