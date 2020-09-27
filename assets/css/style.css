@@ -101,6 +101,9 @@ a { color: white; text-decoration: none; }
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
 }
+a:hover{
+    color: rgb(0, 140, 255);
+}
 
 table, th, td {
     border: 2px solid black;
