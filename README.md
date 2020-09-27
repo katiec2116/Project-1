@@ -10,7 +10,7 @@ A fitness calculator with calorie tracker
 Link 
 ------------------------------------------------------------------------
 
-launch the 80/20 app <link rel="Here" href="link to deployed site">
+launch the 80/20 app https://katiec2116.github.io/80-20-Rule/
 
 
 
@@ -24,10 +24,10 @@ In the fitness calculator user will input age, weight, height, and gender to get
 Screenshots
 ------------------------------------------------------------------------
 
-![](assets\images\screenCapture%201.PNG)
+<img src="assets\images\screenCapture%201.PNG">
 
 
-![](assets\images\screenCapture2.PNG)
+<img src="assets\images\screenCapture2.PNG">
 
 
-![](assets\images\screenCapture3.PNG)
+<img src="assets\images\screenCapture3.PNG">
