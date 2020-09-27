@@ -4,7 +4,9 @@ body {
     font-family: 'Poppins', sans-serif; 
 }
   
-
+.is-child{
+    box-shadow: 0 0 8px rgb(253, 253, 253);
+}
 .field{
     color: black;
 }
