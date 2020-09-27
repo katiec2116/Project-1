@@ -11,10 +11,11 @@
     <!-- Bulma stylesheet link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <!-- GoogleFonts stylesheet -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Syncopate:wght@700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-  
+
 </head>
 
 <body>
@@ -44,19 +45,19 @@
                             <div class="content">
                                 <div class="containerFit">
                                     <div class="field">
-                                        <label class="label">Age</label>
+                                        <label class="label">Age </label>
                                         <div class="control">
                                             <input class="ageInput" type="number">
                                         </div>
                                     </div>
                                     <div class="field">
-                                        <label class="label">Weight</label>
+                                        <label class="label">Weight <small> (pounds)</small></label>
                                         <div class="control">
                                             <input class="weightInput" type="number">
                                         </div>
                                     </div>
                                     <div class="field">
-                                        <label class="label">Height</label>
+                                        <label class="label">Height<small> (inches)</small></label>
                                         <div class="control">
                                             <input class="heightInput" type="number">
                                         </div>
@@ -78,9 +79,9 @@
                             </div>
                         </article>
                         <article class="tile is-child notification has-background-grey-lighter">
-                            <p class="title pb-4">Fitness Results<button type="reset" value="Reset input"
-                                id="clearFit" class="button is-small is-link is-pulled-right mr-2"> <i
-                                    class="fas fa-undo"></i>Reset</button></p>
+                            <p class="title pb-4">Fitness Results<button type="reset" value="Reset input" id="clearFit"
+                                    class="button is-small is-link is-pulled-right mr-2"> <i
+                                        class="fas fa-undo"></i>Reset</button></p>
                             <div class="field is-horizontal is-grouped">
                                 <table class="greenTable">
                                     <thead>
@@ -98,9 +99,10 @@
                                             <td class="bodyFat">0</td>
                                             <td class="dailyC">0</td>
                                         </tr>
-
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class=fitResults>
                             </div>
                         </article>
                     </div>
@@ -141,11 +143,11 @@
                         <article class="tile is-child notification has-background-grey-lighter foodTile2">
                             <p class="title pb-4">Nutritional Information<button type="reset" value="Reset input"
                                     id="clear" class="button is-small is-link is-pulled-right mr-2"> <i
-                                        class="fas fa-undo"></i>Reset</button></p>
+                                        class="fas fa-undo"></i>Reset</button>
+                            </p>
                             <div class="foodContent field is-horizontal pr-3 pl-3">
                                 <div class="control">
                                     <p class="subtitle mb-0">Breakfast</p>
-
                                     <table class="breakfast">
                                         <tr class="table-header">
                                             <th class="item">Item</th>
@@ -155,7 +157,6 @@
                                 </div>
                                 <div class="control">
                                     <p class="subtitle mb-0">Lunch</p>
-
                                     <table class="lunch">
                                         <tr class="table-header">
                                             <th class="item">Item</th>
@@ -165,7 +166,6 @@
                                 </div>
                                 <div class="control">
                                     <p class="subtitle mb-0">Dinner</p>
-
                                     <table class="dinner">
                                         <tr class="table-header">
                                             <th class="item">Item</th>
@@ -173,35 +173,11 @@
                                     </table>
                                 </div>
                             </div>
-
-                                    <!-- <div class="foodContent field is-horizontal"> 
-                                <div class="control">
-                                    <p class="subtitle">Breakfast</p>
-                                    <div class="content2">
-                                        
-                                    </div>
-                                </div>
-                                <div class="control">
-                                    <p class="subtitle">Lunch</p>
-                                    <div class="contentLunch">
-                                        
-                                    </div>
-                                </div>
-                                <div class="control">
-                                    <p class="subtitle">Dinner</p>
-                                    <div class="contentDinner">
-                                        
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="control totalDiv has-text-centered">
-                                    <p class="subtitle mb-0"><button type="submit" id="totalBtn"
-                                        class="button is-small "> Get Total Calories for the
-                                        day</button></p>
-                                    <!-- <div class="totalCalDisplay"> -->
-
-                                    <!-- Content -->
-                                </div>
+                                <p class="subtitle mb-0"><button type="submit" id="totalBtn" class="button is-small ">
+                                        Get Total Calories for the
+                                        day</button>
+                                </p>
                             </div>
                         </article>
                     </div>
@@ -216,7 +192,6 @@
                 Made by GitFit.
             <p class="mb-0">
                 &copy; 2020 GitFit Development Group, Inc.
-            </p>
             </p>
         </div>
     </footer>

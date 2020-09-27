@@ -114,7 +114,16 @@ td{
     background-color: rgb(194, 191, 191);
     font-family: 'Poppins', sans-serif;
 }
-
+small{
+    color: grey;
+    font-size:12px;
+}
+.displayFit{
+    border: 2px solid black;
+    padding: 10px;
+    margin-top:10px;
+    background-color:  rgb(238, 238, 238);
+}
 
 .totalDiv{
     color: rgb(44, 43, 43);

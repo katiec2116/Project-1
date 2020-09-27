@@ -231,10 +231,12 @@ function getFoods() {
 $(".buttonS").on("click", function (event) {
     event.preventDefault();
     age = $(".ageInput").val();
-    weight = $(".weightInput").val();
-    height = $(".heightInput").val();
+    // convert entered data to kg and cm
+    weight = $(".weightInput").val()/2.20462262185;
+    height = $(".heightInput").val()/0.39370;
     gender = $(".select option:selected").val();
-
+    // add css to table on generation of data
+    $(".fitResults").addClass("displayFit");
 
 
     var bmi = {
@@ -248,8 +250,12 @@ $(".buttonS").on("click", function (event) {
         }
     }
     $.ajax(bmi).done(function (response) {
-        var result = response.bmi.toFixed(2);
+        var result = response.bmi.toFixed(1);
+        // show response in table
         $(".BMI").text(result);
+        // show ideal bmi in results below
+        $(".fitResults").append($("<p>").text("A healthy BMI range for you is " + response.healthy_bmi_range));
+
     });
 
 
@@ -267,8 +273,10 @@ $(".buttonS").on("click", function (event) {
     }
 
     $.ajax(idealweight).done(function (response) {
-        var result = response.Devine.toFixed(2);
-        $(".idealWeight").text(result);
+        var result = response.Devine*2.20462262185;
+        console.log(result.toFixed(1))
+        // show result in table
+        $(".idealWeight").text(result.toFixed(1));
     });
 
     //.........body fat
@@ -286,7 +294,8 @@ $(".buttonS").on("click", function (event) {
     }
 
     $.ajax(bodyFat).done(function (response) {
-        var result = response['Body Fat (BMI method)'].toFixed(2);
+        var result = response['Body Fat (BMI method)'].toFixed(1);
+        // show result in table
     $(".bodyFat").text(result);
     });
 
@@ -304,8 +313,12 @@ $(".buttonS").on("click", function (event) {
     }   
 
     $.ajax(dailyCalories).done(function (response) {
-        var result = response.data.BMR.toFixed(2);
+        var result = response.data.BMR.toFixed(0);
+        // show result in table
         $(".dailyC").text(result);
+        // show suggested calories in results below
+        $(".fitResults").append($("<p>").text("To gain weight, your daily calories should be " + response.data.goals.BMR['Weight gain'].calory.toFixed(0)))
+        $(".fitResults").append($("<p>").text("To lose weight, your daily calories should be " + response.data.goals.BMR['Weight loss'].calory.toFixed(0)))
     });
 
 });
