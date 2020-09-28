@@ -32,3 +32,14 @@ Screenshots
 
 
 <img src="assets\images\screenCapture3.PNG">
+
+
+Contributors
+------------------------------------------------------------------------
+- Katie Campbell
+
+- Anthonny Rodriguez
+
+- Vinson Cernuto
+
+- Rachel Williams
