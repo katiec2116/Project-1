@@ -3,7 +3,49 @@ body {
     height:100%;  
     font-family: 'Poppins', sans-serif; 
 }
-  
+strong{
+    color:whitesmoke;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 20px;
+}
+i{
+    margin-right: 10px;
+}
+img {
+    height:170px;
+    margin-top: 95px;
+}
+footer {
+    clear: both;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color:rgb(0, 0, 0);
+    background-color: #FA85C4ff; 
+}
+a { 
+    color: white; text-decoration: none; 
+}
+a:hover{
+    color: rgb(0, 140, 255);
+}
+table, th, td {
+    border: 2px solid black;
+    padding-left:5px;
+    padding-right: 5px;
+  }
+th{
+    background-color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;;
+}
+td{
+    background-color: rgb(194, 191, 191);
+    font-family: 'Poppins', sans-serif;
+}
+small{
+    color: grey;
+    font-size:12px;
+}
 .is-child{
     box-shadow: 0 0 8px rgb(253, 253, 253);
 }
@@ -22,22 +64,6 @@ body {
 .input{
     border: 1px solid black;
 }
-footer {
-    clear: both;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    color:rgb(0, 0, 0);
-    background-color: #FA85C4ff; 
-}
-
-.footerDiv{
-    background-color: orange;
-}
-
-i{
-    margin-right: 10px;
-}
-
 
 .hero{
     background-image:url(../images/background.jpg);
@@ -49,10 +75,6 @@ i{
     overflow: hidden;
     width: 100%;  
 }
-img {
-    height:170px;
-    margin-top: 95px;
-}
 
 #hero-text{
     text-align: center;
@@ -62,11 +84,7 @@ img {
     transform: translate(-50%, -50%);
     width:80%;
 }
-strong{
-    color:whitesmoke;
-    font-family: 'Syncopate', sans-serif;
-    font-size: 20px;
-}
+
 
 .name{
     font-size: 45px;
@@ -90,8 +108,6 @@ strong{
      
 }
 
-a { color: white; text-decoration: none; }
-
 .arrow {
   text-align: center;
   margin: 8% 0;
@@ -102,24 +118,6 @@ a { color: white; text-decoration: none; }
   animation: bounce 2s infinite;
 }
 
-table, th, td {
-    border: 2px solid black;
-    padding-left:5px;
-    padding-right: 5px;
-  }
-th{
-    background-color: whitesmoke;
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;;
-}
-td{
-    background-color: rgb(194, 191, 191);
-    font-family: 'Poppins', sans-serif;
-}
-small{
-    color: grey;
-    font-size:12px;
-}
 .displayFit{
     border: 2px solid black;
     padding: 10px;
