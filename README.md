@@ -10,7 +10,7 @@ A fitness calculator with calorie tracker
 Link 
 ------------------------------------------------------------------------
 
-launch the 80/20 app <link rel="Here" href="link to deployed site">
+Launch the 80/20 app <link rel="Here" href="link to deployed site">
 
 
 
