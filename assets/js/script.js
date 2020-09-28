@@ -23,10 +23,19 @@ $("#clear").on("click", function (event) {
 // reset for fitness info
 $("#clearFit").on("click", function (event) {
     event.preventDefault();
+    // clear table
     $(".BMI").text("0");
     $(".idealWeight").text("0");
     $(".bodyFat").text("0");
     $(".dailyC").text("0");
+    // clear and hide div
+    $(".fitResults").hide();
+    $(".fitResults").empty();
+    // clear forms input
+    $(".ageInput").val("");
+    $(".weightInput").val("")
+    $(".heightInput").val("")
+    $(".select option:selected").val("");
     
 });
 // on click function for submitting food (Breakfast)
@@ -253,6 +262,7 @@ $(".buttonS").on("click", function (event) {
         var result = response.bmi.toFixed(1);
         // show response in table
         $(".BMI").text(result);
+        $(".fitResults").show();
         // show ideal bmi in results below
         $(".fitResults").append($("<p>").text("A healthy BMI range for you is " + response.healthy_bmi_range));
 
