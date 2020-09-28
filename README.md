@@ -25,7 +25,7 @@ In the fitness calculator user will input age, weight, height, and gender to get
 Screenshots
 ------------------------------------------------------------------------
 
-<img src="assets\images\screenCapture%201.PNG">
+<img src="assets\images\screenCapture1.PNG">
 
 
 <img src="assets\images\screenCapture2.PNG">
